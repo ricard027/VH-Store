@@ -1,6 +1,7 @@
 import { Createcomponent } from './createcomponent.js'
 import { getProductDetails } from './getproductdetails.js'
 import { getProducts } from './getproducts.js'
+import { formatNumber } from './formatnumber.js'
 
 const buttonRemoveFilter = document.querySelector('.btn_remove_filter')
 const list = document.querySelector('.list_items')
@@ -89,11 +90,15 @@ const displayProducts = async () => {
     const containerButtons = Createcomponent('div', 'container_btn')
     const promoitem = Createcomponent('p', 'promo', 'OFF')
     const custonButton = Createcomponent('button', 'btn')
-    const listPrice = Createcomponent('p', 'previous_price', product.listPrice)
+    const listPrice = Createcomponent(
+      'p',
+      'previous_price',
+      formatNumber(product.listPrice)
+    )
     const bestPrice = Createcomponent(
       'p',
       'current_price',
-      ` R$ ${product.bestPrice}`
+      ` R$ ${formatNumber(product.bestPrice)}`
     )
     const iconButton = Createcomponent(
       'span',

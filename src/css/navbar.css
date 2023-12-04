@@ -16,6 +16,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
+  gap: 1rem;
 }
 .nav_bar nav .cart {
   padding: 0.5em;
@@ -31,6 +32,7 @@
   display: flex;
   justify-content: space-between;
   width: 80%;
+  align-items: center;
 }
 
 .logo {

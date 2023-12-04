@@ -76,13 +76,12 @@
 
 .list_items .container_images {
   display: flex;
-  width: 100%;
+  width: auto;
   height: 100px;
   justify-content: center;
   align-items: center;
   place-items: center;
   gap: 1rem;
-  padding: 0 1rem;
 }
 
 .list_items .container_images img {
@@ -95,7 +94,7 @@
   flex: 1 1 auto;
 }
 .list_items .container_images img:hover {
-  border: solid 1px #eee;
+  border: solid 1px #5c5c5c;
 }
 
 .list_items li:hover > .container_btn {

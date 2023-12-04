@@ -19,7 +19,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/vh-store.git
+git clone https://github.com/ricard024/vh-store.git
 Open the index.html file in your preferred web browser.
 
 Project Preview

@@ -1,0 +1,51 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center;
+}
+
+.button_container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.button_container button {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom, #333, #121212);
+}
+
+@media screen and (max-width: 1024px) {
+  #toggle_button {
+    display: none;
+  }
+}
+
+.button_mobile_container {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .button_mobile_container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .button_mobile_container button {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    background: linear-gradient(to bottom, #333, #121212);
+  }
+}

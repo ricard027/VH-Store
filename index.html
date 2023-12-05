@@ -11,47 +11,30 @@
     <title>VH - Store</title>
   </head>
   <body>
-    <header class="nav_bar">
-      <nav>
-        <div class="logo">VH Store</div>
-        <div class="search_item">
-          <input type="text" placeholder="pesquise seu produto" />
-          <span class="material-symbols-outlined search_icon"> search </span>
-        </div>
-        <div class="cart_container">
-          <span class="material-symbols-outlined cart"> shopping_cart </span>
-        </div>
-      </nav>
-    </header>
     <div class="menu">
       <div class="items_quantity">
         <p
-          class="quantity_description"
-          aria-label="Quantidade de produtos"
-          title="Quantidade de produtos"
+          id="itemsPerRow"
+          title="Quantidade de produtos por linha"
+          aria-label="Quantidade de produtos por linha"
         >
-          Quantidade de produtos
+          Quantidade de produtos por linha
         </p>
-        <p class="quantity"></p>
       </div>
-      <div class="select_container">
-        <select
-          id="select"
-          aria-label="Filtre por marca"
-          title="Filtre por marca"
-        >
-          <option value="default">Filtre uma marca</option>
-        </select>
-        <button
-          aria-label="remover filtro"
-          title="remover filtro"
-          class="btn_remove_filter"
-        >
-          <span class="material-symbols-outlined"> close </span>
+      <div class="button_container">
+        <button id="toggle_button">
+          Alterar quantidade
+          <span class="material-symbols-outlined"> settings </span>
+        </button>
+      </div>
+      <div class="button_mobile_container">
+        <button id="toggle_button_mobile">
+          Alterar quantidade
+          <span class="material-symbols-outlined"> settings </span>
         </button>
       </div>
     </div>
-    <ul class="list_items"></ul>
+    <ul class="list_items grid-cols-5"></ul>
   </body>
   <script src="./src/js/index.js" type="module"></script>
 </html>

@@ -10,7 +10,6 @@ export const updateItemsPerRow = () => {
   let itemsPerRowElement = document.getElementById('itemsPerRow')
 
   if (!itemsPerRowElement) {
-    itemsPerRowElement = Createcomponent('div', 'itemsPerRow')
     listContainer.appendChild(itemsPerRowElement)
   }
 

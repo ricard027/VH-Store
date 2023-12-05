@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
   buttonMobile.addEventListener('click', function () {
     isClicked = !isClicked
 
+    list.classList.remove('grid-cols-4')
+
+    const screenWidth = window.innerWidth
+
     if (isClicked) {
       list.classList.add('grid-cols-2')
       list.classList.remove('grid-cols-5')

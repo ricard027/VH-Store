@@ -2,59 +2,24 @@ import { Createcomponent } from './createcomponent.js'
 import { getProductDetails } from './getproductdetails.js'
 import { getProducts } from './getproducts.js'
 import { formatNumber } from './formatnumber.js'
+import { updateItemsPerRow } from './updateItensRow.js'
 
-const buttonRemoveFilter = document.querySelector('.btn_remove_filter')
+import './updatedom.js'
+import './toogle.js'
+
 const list = document.querySelector('.list_items')
-const quantityProduct = document.querySelector('.quantity')
-const selectItem = document.querySelector('#select')
+const itemsPerRowElement = document.getElementById('itemsPerRow')
 
 const products = await getProducts()
 
 let currentProducts = products
 
-const filterItems = (brands) => {
-  currentProducts = products.filter(({ brand }) => {
-    return brand === brands
-  })
-  displayProducts()
-}
-
-const getSelectedValue = () => {
-  const selectedValue = selectItem.value
-
-  if (selectedValue !== 'default') {
-    filterItems(selectedValue)
-  }
-}
-
-buttonRemoveFilter.addEventListener('click', async () => {
-  currentProducts = await getProducts()
-  return displayProducts()
-})
-
-selectItem.addEventListener('change', getSelectedValue)
-
-const setOptions = async () => {
-  const uniqueBrands = new Set()
-
-  selectItem.innerHTML = ''
-
-  products.forEach((product) => {
-    if (!uniqueBrands.has(product.brand)) {
-      uniqueBrands.add(product.brand)
-
-      const optionitem = document.createElement('option')
-      optionitem.textContent = product.brand
-      optionitem.value = product.brand
-      selectItem.appendChild(optionitem)
-    }
-  })
-}
-
-setOptions()
-
 const displayProducts = async () => {
   list.innerHTML = ''
+
+  window.innerWidth < 768
+    ? (itemsPerRowElement.textContent = `Quantidade de produtos por linha: 1`)
+    : (itemsPerRowElement.textContent = `Quantidade de produtos por linha: 5`)
 
   currentProducts.forEach(async (product) => {
     currentProducts.find((product) => console.log(product))
@@ -77,7 +42,6 @@ const displayProducts = async () => {
     })
 
     const hasPromotion = product.listPrice > product.bestPrice
-    quantityProduct.innerHTML = `${currentProducts.length}`
 
     const container = Createcomponent('div', 'container', '')
     const listItem = Createcomponent('li')
@@ -128,5 +92,8 @@ const displayProducts = async () => {
     list.appendChild(listItem)
   })
 }
+window.addEventListener('load', updateItemsPerRow)
+
+window.addEventListener('resize', updateItemsPerRow)
 
 displayProducts()

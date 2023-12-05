@@ -4,7 +4,7 @@
     width: 90%;
   }
   .list_items li {
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -21,14 +21,22 @@
   .menu {
     margin-top: 150px;
   }
-  .list_items {
+  .grid-cols-5 {
     display: flex;
     flex-wrap: wrap;
     height: auto;
   }
+  .list_items li .container_images img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    max-width: 100px;
+    background-position: center;
+    cursor: pointer;
+  }
 
   @media (max-width: 480px) {
-    .list_items {
+    .grid-cols-5 {
       flex-direction: column;
       align-items: start;
       width: 90%;

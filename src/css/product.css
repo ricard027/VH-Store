@@ -24,6 +24,13 @@
   display: block;
   margin: 0 auto;
   border-radius: 0.5em;
+  cursor: pointer;
+}
+.list_items img.current_image {
+  border: solid 1px #f1f1f1;
+}
+.list_items img.current_image:hover {
+  border: solid 1px #eee;
 }
 
 .list_items li .container {
@@ -42,7 +49,7 @@
   border: solid 1px rgb(0, 126, 0);
   border-radius: 0.2em;
   color: rgb(195, 255, 195);
-  top: 1em;
+  top: 1.5em;
 }
 
 .list_items li .container .product_name {
@@ -67,8 +74,8 @@
 .list_items li .container_btn {
   visibility: hidden;
   position: absolute;
-  top: 1em;
-  right: 1em;
+  top: 1.5em;
+  right: 1.5em;
 }
 
 .list_items li .container_images {

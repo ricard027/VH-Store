@@ -1,0 +1,48 @@
+.bg_modal {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 50;
+  display: none;
+}
+.bg_modal .modal {
+  background-color: #fff;
+  border-radius: 1rem;
+  width: 30vw;
+  height: 50dvh;
+  animation: animate_modal ease-in 0.2s forwards;
+}
+.bg_modal .modal img {
+  width: 100%;
+  height: 100%;
+}
+
+.active_modal {
+  display: flex;
+}
+
+.active_modal .close_modal {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes animate_modal {
+  from {
+    transform: scale(0.5);
+    opacity: 50%;
+  }
+  to {
+    transform: scale(1);
+    opacity: 100%;
+  }
+}

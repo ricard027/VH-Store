@@ -3,6 +3,10 @@ import { getProductDetails } from './getproductdetails.js'
 import { getProducts } from './getproducts.js'
 import { formatNumber } from './formatnumber.js'
 import { updateItemsPerRow } from './updateItensRow.js'
+import { openModal } from './openModal.js'
+
+const modal = document.querySelector('.bg_modal')
+const closeButton = document.querySelector('.close_modal')
 
 import './updatedom.js'
 import './toogle.js'
@@ -26,12 +30,18 @@ const displayProducts = async () => {
     const containerImages = Createcomponent('div', 'container_images')
     const productImage = Createcomponent('img', 'current_image')
 
+    productImage.addEventListener('click', (e) => {
+      openModal(e)
+    })
+
+    closeButton.addEventListener('click', () => {
+      modal.classList.remove('active_modal')
+    })
     const { items } = await getProductDetails(product.productId)
 
     items.map(({ images }) => {
       images.forEach(({ imageUrl }) => {
         const imagesInproduct = document.createElement('img')
-
         imagesInproduct.src = imageUrl
         containerImages.appendChild(imagesInproduct)
 

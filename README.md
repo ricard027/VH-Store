@@ -2,7 +2,6 @@
 
 VH Store
 
-![image](https://github.com/ricard027/VH-Store/assets/87427651/e8fdc830-626a-4af6-a11c-05169ba69706)
 
 Welcome to the VH Store repository, an online store offering a variety of women's and children's products. This project was developed as part of a job application test, utilizing JavaScript, HTML, and CSS. The code has been formatted using Prettier, ensuring consistent and clean organization.
 
